@@ -60,9 +60,10 @@ const Indiv = tw.div`w-5/6 h-5/6 flex flex-col items-center`;
 const Navbar = tw.div`w-5/6 flex justify-around`;
 const NavText = tw.div`text-4xl text-gray-400 mx-auto mt-10 mb-40 cursor-pointer`;
 const UnderDiv = tw.div`relative h-full w-full flex`;
-const Info = tw.div`absolute h-full z-10 text-white flex flex-col justify-between whitespace-pre-wrap`;
-const InfoTitle = tw.div`mt-5 text-9xl font-thin`;
-const InfoContent = tw.div`mb-60 text-3xl`;
-const InfoLink = tw.div`underline underline-offset-4 text-2xl cursor-pointer`;
+const Info = tw.div`absolute h-full z-10 text-white grid grid-rows-12 whitespace-pre-wrap`;
+const InfoTitle = tw.div`row-start-1 row-span-6 text-9xl font-thin`;
+const InfoContent = tw.div`row-start-7 row-span-2 text-3xl`;
+const InfoLink = tw.div`row-start-12 underline underline-offset-4 text-2xl cursor-pointer`;
 const Blank = tw.div`w-1/4`;
 const Photo = tw.div`h-full w-3/4 bg-center bg-cover`;
+// test
