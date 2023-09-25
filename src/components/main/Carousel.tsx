@@ -11,11 +11,11 @@ import image4 from '../../img/image4.png';
 const Carousel = () => {
   const imageList = [image1, image2, image3, image4];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((num) => (num === imageList.length - 1 ? 0 : num + 1));
+      setImageIndex((num) => (num === imageList.length - 1 ? 0 : num + 1));
     }, 3000);
 
     return () => {
@@ -24,17 +24,17 @@ const Carousel = () => {
   }, []);
 
   const goToSlide = (slideIndex: any) => {
-    setCurrentIndex(slideIndex);
+    setImageIndex(slideIndex);
   };
 
   return (
     <Outdiv>
-      <Indiv style={{ backgroundImage: `url(${imageList[currentIndex]})` }}>
+      <Indiv style={{ backgroundImage: `url(${imageList[imageIndex]})` }}>
         <Navbar />
         <CenterText />
         <Dotsdiv>
           {imageList.map((slide, slideIndex) =>
-            currentIndex === slideIndex ? (
+            imageIndex === slideIndex ? (
               <Select key={slideIndex} onClick={() => goToSlide(slideIndex)} />
             ) : (
               <Unselect
