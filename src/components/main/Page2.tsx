@@ -58,7 +58,7 @@ export default Page2;
 const Outdiv = tw.div`h-screen w-full relative group bg-gray-700 flex items-center justify-center`;
 const Indiv = tw.div`w-5/6 h-5/6 flex flex-col items-center`;
 const Navbar = tw.div`w-5/6 flex justify-around`;
-const NavText = tw.div`text-4xl text-gray-400 mx-auto mt-10 mb-40 cursor-pointer`;
+const NavText = tw.div`text-4xl text-gray-400 mx-auto mt-10 mb-40 cursor-pointer select-none`;
 const UnderDiv = tw.div`relative h-full w-full flex`;
 const Info = tw.div`absolute h-full z-10 text-white grid grid-rows-12 whitespace-pre-wrap`;
 const InfoTitle = tw.div`row-start-1 row-span-6 text-9xl font-thin`;
