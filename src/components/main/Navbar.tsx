@@ -5,10 +5,12 @@ import { AiOutlineMenu } from 'react-icons/ai';
 const Navbar = () => {
   return (
     <Navdiv>
-      <Login>RESERVTION</Login>
+      <Login>
+        <LoginText onClick={() => console.log(1)}>RESERVTION</LoginText>
+      </Login>
       <Logo>BUTTER</Logo>
       <Buger>
-        <AiOutlineMenu size="50" color="FFFFFF" />
+        <AiOutlineMenu size="60" color="FFFFFF" />
       </Buger>
     </Navdiv>
   );
@@ -16,7 +18,8 @@ const Navbar = () => {
 
 export default Navbar;
 
-const Navdiv = tw.div`h-auto w-auto mx-10 my-7 grid grid-cols-3 gap-3`;
-const Login = tw.div`text-white underline underline-offset-8 text-2xl font-bold flex items-center`;
-const Logo = tw.div`text-white text-9xl font-bold flex items-center justify-center`;
-const Buger = tw.div`flex items-center justify-end`;
+const Navdiv = tw.div`h-auto w-auto mx-10 my-7 grid grid-cols-9`;
+const Login = tw.div`col-start-1 col-span-1 row-start-1 flex items-center`;
+const LoginText = tw.div`text-white underline underline-offset-8 text-3xl font-bold cursor-pointer`;
+const Logo = tw.div`col-start-4 col-span-3 row-start-1 flex items-center justify-center text-white text-9xl font-bold`;
+const Buger = tw.div`col-start-9 row-start-1 flex items-center justify-end`;
