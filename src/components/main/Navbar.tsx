@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import tw from 'tailwind-styled-components';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { memberAPI } from '../../api/api';
+
+import LoginModal from '../login/LoginModal';
+import SignModal from '../login/SignModal';
 
 const Navbar = () => {
+  const [openModal, setOpenModal] = useState<Boolean>(false);
+  const onModal = () => {
+    setOpenModal(!openModal);
+  };
+  const [openSignModal, setOpenSignModal] = useState<Boolean>(false);
+  const onSignModal = () => {
+    setOpenSignModal(!openSignModal);
+  };
+
+  const logout = () => {
+    memberAPI
+      .signout()
+      .then((request) => console.log(request.data))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Navdiv>
+      {openModal && (
+        <LoginModal onOpenModal={onModal} onSignModal={onSignModal} />
+      )}
+      {openSignModal && <SignModal onSignModal={onSignModal} />}
       <Login>
-        <LoginText onClick={() => console.log('login')}>RESERVTION</LoginText>
+        <LoginText onClick={() => onModal()}>RESERVTION</LoginText>
       </Login>
-      <Logo>BUTTER</Logo>
+      <Logo onClick={() => logout()}>BUTTER</Logo>
       <Buger>
         <AiOutlineMenu size="60" color="FFFFFF" />
       </Buger>
